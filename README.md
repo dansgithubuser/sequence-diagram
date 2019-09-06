@@ -20,7 +20,7 @@ charlie: nirvana
 
 output:
 ```
-alice               bob                 charlie
+alice               bob                 charlie             
 
 apple pie---------->
 
@@ -41,13 +41,15 @@ the universe, and
 everything]
 
 a complex poem of
-intricate concepts--------------------->
+intricate concepts
+          ----------------------------->
 
                     a giant hotdog-
                     shaped car and two
                     chocolate bars----->
 
                                         [nirvana]
+
 ```
 
 ## getting started

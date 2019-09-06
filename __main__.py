@@ -40,6 +40,11 @@ with open(args.output, 'w') as f:
                     f.write(' '*actors[fro])
                     f.write(line)
                     if i != len(lines) - 1: f.write('\n')
+                if len(lines[-1]) > stride - 3:
+                    f.write('\n')
+                    f.write(' '*(actors[fro]))
+                    lines[-1] = ' '*(stride//2)
+                    f.write(lines[-1])
                 f.write('-'*(actors[to]-actors[fro]-1-len(lines[-1])))
                 f.write('>')
                 f.write('\n')
