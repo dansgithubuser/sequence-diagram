@@ -1,0 +1,11 @@
+alice to bob: apple pie
+bob: smiles
+bob to alice: blueberry pie
+alice: smiles
+alice to charlie: strawberry pie
+charlie to bob: money
+bob to alice: paycheck
+alice: contemplates life, the universe, and everything
+alice to charlie: a complex poem of intricate concepts
+bob to charlie: a giant hotdog-shaped car and two chocolate bars
+charlie: nirvana
