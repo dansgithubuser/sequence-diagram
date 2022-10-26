@@ -8,18 +8,20 @@ args = parser.parse_args()
 
 with open(args.input) as f: lines = f.readlines()
 
-actors = set()
+actors = []
 actions = []
 for line in lines:
     who, what = line.split(':')
     who = who.split(' to ')
     what = what.strip()
     if len(who) > 2: raise Exception('invalid syntax')
-    for i in who: actors.add(i)
+    for i in who:
+        if i not in actors:
+            actors.append(i)
     actions.append((who, what))
 
-stride = min(max(max(len(i) for i in actors), max(len(i[1]) for i in actions)) + 4, 20)
-actors = {v: i*stride for i, v in enumerate(sorted(list(actors)))}
+stride = max(max(len(i) for i in actors), min(max(len(i[1]) for i in actions), 20)) + 4
+actors = {v: i*stride for i, v in enumerate(actors)}
 
 class Layer:
     def __init__(self):
@@ -80,7 +82,7 @@ for who, what in actions:
             f.write('\n')
     elif len(who) == 2:
         fro, to = who
-        if fro < to:
+        if actors[fro] < actors[to]:
             lines = textwrap.wrap(what, width=stride)
             for i, line in enumerate(lines):
                 f.write(' '*actors[fro])
