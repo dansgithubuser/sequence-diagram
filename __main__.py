@@ -83,7 +83,7 @@ for who, what in actions:
     elif len(who) == 2:
         fro, to = who
         if actors[fro] < actors[to]:
-            lines = textwrap.wrap(what, width=stride)
+            lines = textwrap.wrap(what, width=stride-1)
             for i, line in enumerate(lines):
                 f.write(' '*actors[fro])
                 f.write(line)
